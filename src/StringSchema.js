@@ -8,7 +8,7 @@ class StringSchema extends Schema {
 
   constructor() {
     super();
-    this._addRule(DEFAULT_RULE, "value must be string");
+    this._addRule(StringSchema.DEFAULT_RULE, "value must be string");
   }
 
   min(n, message) {
@@ -24,7 +24,7 @@ class StringSchema extends Schema {
   }
 
   email(message) {
-    return this._addRule(v => EMAIL_REGEXEP.test(v), message);
+    return this._addRule(v => StringSchema.EMAIL_REGEXEP.test(v), message);
   }
 
   trim() {
