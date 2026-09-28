@@ -7,19 +7,19 @@ class NumberSchema extends Schema {
     this._addRule(NumberSchema.DEFAULT_RULE, "value must be number");
   }
 
-  min(n) {
-    return this._addRule(value => value >= n);
+  min(n, message) {
+    return this._addRule(value => value >= n, message);
   }
-  max(n) {
-    return this._addRule(value => value <= n);
+  max(n, message) {
+    return this._addRule(value => value <= n, message);
   }
   
-  integer() {
-    return this._addRule(value => Number.isInteger(value));
+  integer(message) {
+    return this._addRule(value => Number.isInteger(value), message);
   }
 
-  positive() {
-    return this._addRule(value => value > 0);
+  positive(message) {
+    return this._addRule(value => value > 0, message);
   }
 }
 
